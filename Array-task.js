@@ -9,16 +9,7 @@
 
 
 function arrayDiff(a, b) {
-  
-    if(a.length ===0 || b.length ===0) {
-      return a;
-    }
-    
-    b.forEach((item) => {
-      a.forEach((i) => {
-        item !== i && a.shift(i)
-      }) 
-    })
-    
-    return a
+      
+  return a.filter(i => !b.includes(i));
+
   }
