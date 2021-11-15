@@ -8,13 +8,25 @@
 
 
 
-function arrayDiff(a, b) {
-  let array = a;
+function sortArray(array) {
+  const notIntegerArray = [];
+  let index = 0;
 
-  b.forEach((item) => {
-    array = array.filter((i) => {
-      return i !== item
-    })
+  array.map((item) => {
+    if ((item % 2)) {
+      notIntegerArray.push(item);
+    }
+  })
+
+  notIntegerArray.sort((a, b) => {
+    return a - b;
+  })
+
+  array.forEach((item, counter) => {
+    if ((item % 2)) {
+      array[counter] = notIntegerArray[index];
+      index = index + 1
+    }
   })
 
   return array
